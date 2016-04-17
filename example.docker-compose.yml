@@ -1,0 +1,16 @@
+version: "2"
+services:
+  auto-deploy: 
+    build: ./
+    image: "livingstoneonline/auto-deploy"
+    container_name: auto-deploy
+    restart: always
+    environment:
+      - "DOCKER_COMPOSE_DIR=/opt/livingstoneonline"
+      - "AUTH_TOKEN=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/root/.docker:/root/.docker"
+      - "/opt/livingstoneonline:/opt/livingstoneonline"
+    ports:
+      - "8000:8000"

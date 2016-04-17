@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+# -*- mode: sh -*-
+# vi: set ft=sh:
+with-contenv
+import -i AUTH_TOKEN
+/usr/bin/docker-hook -t ${AUTH_TOKEN} --port 8000 -c /usr/bin/deploy
