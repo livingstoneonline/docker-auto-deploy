@@ -1,6 +1,5 @@
 #!/bin/sh
 cd $DOCKER_COMPOSE_DIR
-docker-compose -v -rmi all down
 docker-compose pull
-docker images | grep none | awk '{ print $3 }' | xargs docker rmi
 docker-compose up -d
+docker images | grep none | awk '{ print $3 }' | xargs docker rmi
