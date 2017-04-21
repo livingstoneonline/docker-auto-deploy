@@ -1,7 +1,11 @@
-FROM alpine:3.3
+FROM alpine:3.5
 MAINTAINER Nigel Banks <nigel.g.banks@gmail.com>
 
-ARG S6_VERSION="1.17.2.0"
+LABEL "License"="GPLv3" \
+      "Version"="0.0.1"
+
+ARG S6_VERSION="1.19.1.1"
+
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
     PYTHONPATH=/usr/lib/python2.7/site-packages
 
