@@ -9,7 +9,7 @@ ARG S6_VERSION="1.19.1.1"
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
     PYTHONPATH=/usr/lib/python2.7/site-packages
 
-RUN apk --update add ca-certificates curl docker libssh2 openssl py-pip python && \
+RUN apk --update add gcc ca-certificates curl docker libssh2 py-pip python2-dev musl-dev libffi-dev openssl-dev make && \
     pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir docker-compose && \
     curl -L https://github.com/just-containers/s6-overlay/releases/download/v${S6_VERSION}/s6-overlay-amd64.tar.gz | \
